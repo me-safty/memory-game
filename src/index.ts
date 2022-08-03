@@ -92,6 +92,7 @@ function finshGame() {
     if (localStorage.high_score) {
       if (+localStorage.high_score > wrongTreis) {
         high[1].innerHTML = `${wrongTreis}`;
+        window.localStorage.setItem("high_score", `${wrongTreis}`);
       } else {
         high[1].innerHTML = `${localStorage.high_score}`;
       }
