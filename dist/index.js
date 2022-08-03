@@ -54,10 +54,16 @@ boxs.forEach((box) => {
                         wrongTreis++;
                         const wrongTreisP = document.querySelectorAll(".header p span");
                         wrongTreisP[2].innerHTML = `${wrongTreis}`;
+                        const falseSound = document.getElementById("false");
+                        falseSound.playbackRate = 3;
+                        falseSound.play();
                     }
                     else {
                         (_a = imgActive[0].parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("done");
                         (_b = imgActive[1].parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("done");
+                        const trueSound = document.getElementById("true");
+                        trueSound.playbackRate = 2;
+                        trueSound.play();
                         finshGame();
                     }
                     imgActive[0].classList.remove("active");
@@ -89,6 +95,8 @@ function finshGame() {
         fin.style.opacity = "1";
         finBoxHigh.innerHTML = high[1].innerHTML;
         finBoxYour.innerHTML = `${wrongTreis}`;
+        const winSound = document.getElementById("win");
+        winSound.play();
     }
 }
 // randomise images

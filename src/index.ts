@@ -4,11 +4,11 @@ const imgs = document.querySelectorAll("img") as NodeListOf<HTMLImageElement>;
 
 const high = document.querySelectorAll(
   ".header p span"
-  ) as NodeListOf<HTMLSpanElement>;
+) as NodeListOf<HTMLSpanElement>;
 
 // add window screan for edit name
-let yourName = prompt("What's your name ?") as string || "unknown";
-high[0].innerHTML = `${yourName}`
+let yourName = (prompt("What's your name ?") as string) || "unknown";
+high[0].innerHTML = `${yourName}`;
 
 if (localStorage.high_score) {
   high[1].innerHTML = `${localStorage.high_score}`;
@@ -68,9 +68,19 @@ boxs.forEach((box) => {
               ".header p span"
             ) as NodeListOf<HTMLSpanElement>;
             wrongTreisP[2].innerHTML = `${wrongTreis}`;
+            const falseSound = document.getElementById(
+              "false"
+            ) as HTMLAudioElement;
+            falseSound.playbackRate = 3;
+            falseSound.play();
           } else {
             imgActive[0].parentElement?.classList.add("done");
             imgActive[1].parentElement?.classList.add("done");
+            const trueSound = document.getElementById(
+              "true"
+              ) as HTMLAudioElement;
+              trueSound.playbackRate = 2;
+              trueSound.play();
             finshGame();
           }
           imgActive[0].classList.remove("active");
@@ -103,6 +113,10 @@ function finshGame() {
     fin.style.opacity = "1";
     finBoxHigh.innerHTML = high[1].innerHTML;
     finBoxYour.innerHTML = `${wrongTreis}`;
+    const winSound = document.getElementById(
+      "win"
+    ) as HTMLAudioElement;
+    winSound.play();
   }
 }
 
