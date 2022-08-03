@@ -4,7 +4,11 @@ const imgs = document.querySelectorAll("img") as NodeListOf<HTMLImageElement>;
 
 const high = document.querySelectorAll(
   ".header p span"
-) as NodeListOf<HTMLSpanElement>;
+  ) as NodeListOf<HTMLSpanElement>;
+
+// add window screan for edit name
+let yourName = prompt("What's your name ?") as string || "unknown";
+high[0].innerHTML = `${yourName}`
 
 if (localStorage.high_score) {
   high[1].innerHTML = `${localStorage.high_score}`;

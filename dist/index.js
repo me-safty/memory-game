@@ -3,6 +3,9 @@
 const boxs = document.querySelectorAll(".box");
 const imgs = document.querySelectorAll("img");
 const high = document.querySelectorAll(".header p span");
+// add window screan for edit name
+let yourName = prompt("What's your name ?") || "unknown";
+high[0].innerHTML = `${yourName}`;
 if (localStorage.high_score) {
     high[1].innerHTML = `${localStorage.high_score}`;
 }
