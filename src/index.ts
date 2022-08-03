@@ -12,9 +12,9 @@ if (localStorage.high_score) {
 
 const fin = document.querySelector(".finsh") as HTMLDivElement;
 const finBox = document.querySelector(".finBox") as HTMLDivElement;
-const finBoxHigh = document.querySelectorAll(".finBox p")[1]
+const finBoxYour = document.querySelectorAll(".finBox p")[1]
   .children[0] as HTMLSpanElement;
-const finBoxYour = document.querySelectorAll(".finBox p")[2]
+const finBoxHigh = document.querySelectorAll(".finBox p")[2]
   .children[0] as HTMLSpanElement;
 const btn = document.querySelector(".finBox button") as HTMLButtonElement;
 btn.addEventListener("click", () => location.reload());

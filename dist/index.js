@@ -8,9 +8,9 @@ if (localStorage.high_score) {
 }
 const fin = document.querySelector(".finsh");
 const finBox = document.querySelector(".finBox");
-const finBoxHigh = document.querySelectorAll(".finBox p")[1]
+const finBoxYour = document.querySelectorAll(".finBox p")[1]
     .children[0];
-const finBoxYour = document.querySelectorAll(".finBox p")[2]
+const finBoxHigh = document.querySelectorAll(".finBox p")[2]
     .children[0];
 const btn = document.querySelector(".finBox button");
 btn.addEventListener("click", () => location.reload());
