@@ -8,6 +8,54 @@
 .main-box {
   margin: auto;
   width: 75%;
+  transform: scale(0.8);
+}
+
+.finsh {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 105%;
+  height: 105%;
+  background: rgb(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: 1000;
+}
+
+.finBox {
+  width: 35%;
+  height: 25%;
+  background: #000000a1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 10px;
+  filter: drop-shadow(0px 0px 5px #333);
+}
+
+.finBox p {
+  font-size: 22px;
+  color: #2196f3;
+  filter: drop-shadow(0px 0px 5px #333);
+  font-weight: bold;
+}
+
+.finBox button {
+  font-size: 20px;
+  padding: 7px 13px;
+  background-color: #2196f3;
+  border: none;
+  color: #fff;
+  border-radius: 7px;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 5px #333);
 }
 
 .header {
@@ -59,6 +107,7 @@
   border: 5px solid #2196f3;
   /* animation: op .3s both; */
   opacity: 0;
+  transition: 0.3s;
   transform: rotateY(180deg);
 }
 
@@ -76,5 +125,22 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes wrongRotate {
+  0% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+@keyframes wrongOp {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
